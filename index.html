@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced CSS Circle</title>
+<style>
+    body {
+        margin: 0;
+        padding-top: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #050210;
+    }
+    
+    .circle {
+        position: relative;
+        width: 60vh;
+        height: 60vh;
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        border-radius: 50%;
+        animation: animate 1.5s linear infinite;
+    }
+
+    .circle1 {
+        position: absolute;
+        width: 25vh;
+        height: 25vh;
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        animation: a1 1s linear infinite;
+        border-radius: 50%;
+        filter: blur(150px);
+    }
+
+    @keyframes animate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes a1 {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(2);
+        }
+    }
+    
+    .circle::after {
+        content: '';
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        bottom: 25px;
+        left: 25px;
+        border-radius: 70%;
+        background-color: #050210;
+    }
+
+    .circle span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        border-radius: 70%;
+    }
+
+    .circle span:nth-child(1) {
+        filter: blur(3px);
+    }
+    
+    .circle span:nth-child(2) {
+        filter: blur(6px);
+    }
+
+    .circle span:nth-child(3) {
+        filter: blur(9px);
+    }
+
+    .circle span:nth-child(4) {
+        filter: blur(15px);
+    }
+    
+</style>
+</head>
+
+<body>
+    <div class="circle">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="circle1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+
+</html>
